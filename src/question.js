@@ -9,15 +9,16 @@ module.exports = query => {
 
   switch (true) {
 
-    case q.startsWith('which of the following numbers is the largest'):
-      const i = n.split(', ').map(parseInt);
+    case q.match('the largest'):
+      const i = q.match(numberPattern).map(parseInt);
       console.log(JSON.stringify(i));
-      return Math.max(i);
+      return Math.max(...i);
 
-    case q.startsWith('which of the following numbers is both a square and a cube'):
+    case q.match('square and a cube'):
+      console.log('square');
       return '';
 
-    case 'what is your name':
+    case q.match('what is your name'):
       return 'xcafaaard';
 
     case number.length > 0:
@@ -33,4 +34,6 @@ module.exports = query => {
         }
         return;
   }
+
+  return '';
 };
