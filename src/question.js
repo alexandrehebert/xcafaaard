@@ -62,7 +62,7 @@ module.exports = query => {
       } else if (q.match('multiplied by')) {
         console.log(number[0] * number[1]);
         return number[0] * number[1];
-      } else if (q.match('multiplied by')) {
+      } else if (q.match('minus')) {
         return number[0] - number[1];
       } else if (q.match('Fibonacci')) {
         return fib(parseInt(number[0]));
