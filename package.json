@@ -19,6 +19,7 @@
   "homepage": "https://github.com/alexandrehebert/xcafaaard#readme",
   "dependencies": {
     "express": "^4.15.2",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "prime-number": "^0.2.2"
   }
 }

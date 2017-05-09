@@ -1,11 +1,20 @@
 isPrime = require('prime-number');
 _ = require('lodash');
 
+function fib(n, undefined){
+  if(fib.cache[n] === undefined){
+    fib.cache[n] = fib(n-1) + fib(n-2);
+  }
+
+  return fib.cache[n];
+}
+fib.cache = [0, 1, 1];
+
 module.exports = query => {
 
   const [id, q] = query.split(/.*?: /);
 
-  console.log(query);
+  console.log(q);
 
   let numberPattern = /\d+/g;
   let number = q.match(numberPattern) || [];
@@ -47,8 +56,6 @@ module.exports = query => {
           return primes.join(', ');
 
     case number.length > 0:
-      console.log(JSON.stringify(number));
-
       if (q.match('plus')) {
         console.log(number[0] + number[1]);
         return number[0] + number[1];
@@ -56,6 +63,8 @@ module.exports = query => {
       else if (q.match('multiplied by')) {
         console.log(number[0] * number[1]);
         return number[0] * number[1];
+      } else if (q.match('Fibonacci')) {
+        return fib(parseInt(number[0]));
       }
       return;
   }
