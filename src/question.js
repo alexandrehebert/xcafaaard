@@ -14,6 +14,9 @@ module.exports = query => {
       console.log(JSON.stringify(i));
       return Math.max(...i);
 
+    case q.match('what colour is a banana'):
+      return 'yellow';
+
     case q.match('square and a cube'):
       console.log('square');
       return '';
