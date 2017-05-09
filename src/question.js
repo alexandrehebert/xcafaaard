@@ -14,7 +14,7 @@ module.exports = query => {
 
   const [id, q] = query.split(/.*?: /);
 
-  console.log(q);
+  console.log(query);
 
   let numberPattern = /\d+/g;
   let number = q.match(numberPattern) || [];
@@ -50,7 +50,7 @@ module.exports = query => {
     case !!q.match('what is your name'):
       return 'xcafaaard';
 
-    case q.match('primes'):
+    case !!q.match('primes'):
       console.log(isPrime(number[0]));
       const primes = _.filter(number, i => isPrime(i));
       return primes.join(', ');
