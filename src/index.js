@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
   switch (q) {
     case 'what is your name':
       res.send('xcafaaard');
-      break;
+      return;
   }
 
   res.send('');
