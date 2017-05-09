@@ -16,7 +16,12 @@ module.exports = query => {
       return 'xcafaaard';
     case number.length > 0: {
       console.log(JSON.stringify(number));
-      return number[0] + number[1]
+        if (q.find('plus')) {
+            return number[0] + number[1];
+        }
+        else if (q.find('moins')) {
+            return number[0] * number[1];
+        }
     }
   }
 };
