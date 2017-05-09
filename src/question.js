@@ -1,3 +1,6 @@
+isPrime = require('prime-number');
+_ = require('lodash');
+
 module.exports = query => {
 
   const [id, q] = query.split(/.*?: /);
@@ -37,6 +40,11 @@ module.exports = query => {
 
     case !!q.match('what is your name'):
       return 'xcafaaard';
+
+      case q.match('primes'):
+          console.log(isPrime(number[0]));
+          const primes = _.filter(number, i => isPrime(i));
+          return primes.join(', ');
 
     case number.length > 0:
       console.log(JSON.stringify(number));
