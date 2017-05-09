@@ -2,13 +2,13 @@ module.exports = query => {
 
   const [id, q] = query.split(/.*?: /);
 
-  console.log(id, query, q);
+  console.log(query);
 
   var numberPattern = /\d+/g;
   var number = q.match(numberPattern) || [];
 
-  switch (q) {
-    case 'which of the following numbers is the largest':
+  switch (true) {
+    case q.startsWith('which of the following numbers is the largest'):
       const i = n.split(', ').map(parseInt);
       console.log(JSON.stringify(i));
       return Math.max(i);
