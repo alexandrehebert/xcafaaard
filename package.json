@@ -1,0 +1,23 @@
+{
+  "name": "xcafaaard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandrehebert/xcafaaard.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexandrehebert/xcafaaard/issues"
+  },
+  "homepage": "https://github.com/alexandrehebert/xcafaaard#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
