@@ -24,10 +24,13 @@ module.exports = query => {
       console.log(JSON.stringify(number));
 
         if (q.match('plus')) {
+            console.log(number[0] + number[1]);
             return number[0] + number[1];
         }
         else if (q.match('multiplied by')) {
+            console.log(number[0] * number[1]);
             return number[0] * number[1];
         }
+        return;
   }
 };
