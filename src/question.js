@@ -18,6 +18,15 @@ module.exports = query => {
       console.log('banana');
       return 'yellow';
 
+    case !!q.match('who is the Prime Minister of Great Britain'):
+      return 'Theresa May';
+
+    case !!q.match('who played James Bond in the film Dr No'):
+      return 'Sean Connery';
+
+    case !!q.match('what currency did Spain use before the Euro'):
+      return 'pesetas';
+
     case !!q.match('square and a cube'):
       console.log('square');
       return '';
