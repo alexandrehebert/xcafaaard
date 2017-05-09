@@ -3,7 +3,9 @@ let app = express();
 let question = require('./question');
 
 app.get('/', (req, res) => {
-  res.send('' + question(req.query.q));
+  const r = '' + question(req.query.q);
+  console.log('response', r);
+  res.send(r);
 });
 
 app.listen(3000, () => {

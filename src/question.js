@@ -17,7 +17,7 @@ module.exports = query => {
   console.log(query);
 
   let numberPattern = /\d+/g;
-  let number = q.match(numberPattern) || [];
+  let number = (q.match(numberPattern) || []).map(i => parseInt(i, 10));
 
   switch (true) {
 
@@ -50,17 +50,17 @@ module.exports = query => {
     case !!q.match('what is your name'):
       return 'xcafaaard';
 
-    case !!q.match('primes'):
-      console.log(isPrime(number[0]));
+    case !!query.match('primes'):
       const primes = _.filter(number, i => isPrime(i));
-      return primes.join(', ');
+      console.log(primes);
+      return primes.length > 0 ? primes.join(', ') : '';
 
     case number.length > 0:
       if (q.match('plus')) {
-        console.log(number[0] + number[1]);
-        return number[0] + number[1];
+        return _.sum(number);
+      } else if (q.match('power')) {
+        return Math.pow(number[0], number[1]);
       } else if (q.match('multiplied by')) {
-        console.log(number[0] * number[1]);
         return number[0] * number[1];
       } else if (q.match('minus')) {
         return number[0] - number[1];
