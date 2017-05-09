@@ -51,8 +51,7 @@ module.exports = query => {
       return 'xcafaaard';
 
     case !!query.match('primes'):
-      const primes = _.filter(number, i => isPrime(i));
-      console.log(primes);
+      const primes = [...number].filter(isPrime);
       return primes.length > 0 ? primes.join(', ') : '';
 
     case number.length > 0:
