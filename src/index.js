@@ -2,8 +2,19 @@ let express = require('express');
 let app = express();
 
 app.get('/', (req, res) => {
-  console.log('query: ' + req.query.q);
-  res.send('query: ' + req.query.q);
+
+  const [id, q] = req.query.q.split(': ');
+
+  console.log(id, q);
+
+  switch (q) {
+    case 'what is your name':
+      res.send('xcafaaard');
+      break;
+  }
+
+  res.send('');
+
 });
 
 app.listen(3000, () => {
