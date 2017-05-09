@@ -22,6 +22,10 @@ module.exports = query => {
       console.log('square');
       return '';
 
+    case !!q.match('which city is the Eiffel tower in'):
+      console.log('Paris');
+      return 'Paris';
+
     case !!q.match('what is your name'):
       return 'xcafaaard';
 
