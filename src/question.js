@@ -1,9 +1,9 @@
 isPrime = require('prime-number');
 _ = require('lodash');
 
-function fib(n, undefined){
-  if(fib.cache[n] === undefined){
-    fib.cache[n] = fib(n-1) + fib(n-2);
+function fib(n, undefined) {
+  if (fib.cache[n] === undefined) {
+    fib.cache[n] = fib(n - 1) + fib(n - 2);
   }
 
   return fib.cache[n];
@@ -50,19 +50,20 @@ module.exports = query => {
     case !!q.match('what is your name'):
       return 'xcafaaard';
 
-      case q.match('primes'):
-          console.log(isPrime(number[0]));
-          const primes = _.filter(number, i => isPrime(i));
-          return primes.join(', ');
+    case q.match('primes'):
+      console.log(isPrime(number[0]));
+      const primes = _.filter(number, i => isPrime(i));
+      return primes.join(', ');
 
     case number.length > 0:
       if (q.match('plus')) {
         console.log(number[0] + number[1]);
         return number[0] + number[1];
-      }
-      else if (q.match('multiplied by')) {
+      } else if (q.match('multiplied by')) {
         console.log(number[0] * number[1]);
         return number[0] * number[1];
+      } else if (q.match('multiplied by')) {
+        return number[0] - number[1];
       } else if (q.match('Fibonacci')) {
         return fib(parseInt(number[0]));
       }
