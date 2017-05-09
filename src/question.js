@@ -25,7 +25,7 @@ module.exports = query => {
       return 'Sean Connery';
 
     case !!q.match('what currency did Spain use before the Euro'):
-      return 'pesetas';
+      return 'peseta';
 
     case !!q.match('square and a cube'):
       console.log('square');
